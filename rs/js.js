@@ -59,54 +59,58 @@ $(function(){
 });
 
 $(function(){
-	$(document.body).css({background:'none'}).html(Shell.parse('com --aY -bd="abs"'));
+	var c = 'com -a -b 300 --testando=/testando/path$Steste';
+	window.W=Shell.exec(c);
+	//$(document.body).css({background:'none'}).html(c);
+	console.log(c);
+	console.log(W);
 	//$(document.body).css({background:'none'}).html('--- --teste'.match(/^-+/).length);
 	
 });
 //Applications Shell
 Shell = function(){
 	this.exec = function(c){
-
+		return this.parse(c);
 	};
 	this.parse = function(c){
-		var strs = c.match(/".+"/g), S='$S',
-		 c = c.replace(/".+"/g, S),
+		var strs = c.match(/"(^".+)"/g), S='$S',
+		 c = c.replace(/"(^".+)"/g, S),
 		 args = c.split(' '), l = args.length,
 		 res = {}, flag = false;
 
 		for(var i=1;i<l;i++){
-			var raw = args[i];
-			
+			var p, v=true, raw=args[i];
 			if(raw[0]=='-'){
-				if(raw[1] == '-'){
-					var r=raw.split('='), v=true;
-					if(r&&[1]&&r[1]==S&&v = strs[0])
-						strs.shift();
-					r[0] && res[r[0]] = r.length==2&&r[1]?r[1]:v;
+				var s=raw.split('=', 2);
+				p=s[0].substring(1);
+				if(p[0] == '-'){
+					p=p.substring(1);
+					if(s.length == 2)
+						v=s[1];
+				}else{
+					var n=0;
+					if(s.length==1)
+						while(p[n]){
+							res[flag=p[n]] = true;
+							n++;
+						}
+
 					continue;
 				}
-				var n=0;
-				while(flag = raw[++n]) res[flag] = true;
-				continue;
+			}else if(flag){
+				v=raw;
+				p=flag;
+				flag=false;
 			}
-			if(flag){
-				res[flag] = raw;
-				continue;
+			if(v==S){
+				v=strs[0];
+				strs=strs.shift();
+			}else if($.isNumeric(v)){
+				v=parseFloat(v);
 			}
-			if(raw[0] == '-'){
-
-			}
-			if(flag){
-				flag = false;
-			}
-			if(first=='-'){
-
-			}if(first=='"'){
-				part = part.substring(1,part.length-2);
-			}
-			args.push(part);
+			res[p]=v;
 		}
-		return args;
+		return res;
 	};
 };
 Shell = new Shell;

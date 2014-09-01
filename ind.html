@@ -35,20 +35,19 @@
 
  <script>
 //RETIRE ISSO DEPOIS
-window.fl=true;
+window.F=false;
 setInterval(function(){
-	if(window.fl)location.reload();
-}, 5000);
+	if(window.F)location.reload();
+}, 10000);
 $(function(){
-	$("header").click(function(){window.fl = !window.fl});
+	$("header").click(function(){window.F = !window.F});
 });
 
  </script>
 </head>
 <body>
-<header></header>
-
- <nav id="sw-side">
+ <section id="sw-side">
+ 	<header></header>
  	<section class="section-home">
 	 <ul>
 	  <li><a href=""><i class="nav-icon icon-gdrive"></i>Google Drive</a></li>
@@ -72,7 +71,7 @@ $(function(){
 	  <li><a href=""><i class="nav-icon icon-gdrive"></i>Google Drive</a></li>
 	 </ul>
  	</section>
- </nav>
+ </section>
  <div id="sw-wrapper" class="">
 	    <!-- Static navbar -->
 	<div class="navbar navbar-default navbar-static-top" style="border-bottom:;">
