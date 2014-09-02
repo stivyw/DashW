@@ -51,8 +51,7 @@ $(function(){
 
 $(function(){
 	$('.square').click(function(){
-		$('#sw-wrapper').toggleClass('in');
-		$('header').toggleClass('in');
+		$('#sw-main').toggleClass('in');
 		$('#sw-side').toggleClass('in');
 
 	});
