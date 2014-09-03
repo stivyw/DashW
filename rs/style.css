@@ -1,4 +1,139 @@
+//Islania
 body{background:url(img/bg.png);}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+img {
+  max-width: 100% !important;
+}
+.pad {
+  padding: 10px;
+}
+.margin {
+  margin: 10px;
+}
+.inline {
+  display: inline;
+  width: auto;
+}
+.bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black {
+  color: #f9f9f9 !important;
+}
+.bg-gray {
+  background-color: #eaeaec !important;
+}
+.bg-black {
+  background-color: #222222 !important;
+}
+.bg-red {
+  background-color: #f56954 !important;
+}
+.bg-yellow {
+  background-color: #f39c12 !important;
+}
+.bg-aqua {
+  background-color: #00c0ef !important;
+}
+.bg-blue {
+  background-color: #0073b7 !important;
+}
+.bg-light-blue {
+  background-color: #3c8dbc !important;
+}
+.bg-green {
+  background-color: #00a65a !important;
+}
+.bg-navy {
+  background-color: #001f3f !important;
+}
+.bg-teal {
+  background-color: #39cccc !important;
+}
+.bg-olive {
+  background-color: #3d9970 !important;
+}
+.bg-lime {
+  background-color: #01ff70 !important;
+}
+.bg-orange {
+  background-color: #ff851b !important;
+}
+.bg-fuchsia {
+  background-color: #f012be !important;
+}
+.bg-purple {
+  background-color: #932ab6 !important;
+}
+.bg-maroon {
+  background-color: #85144b !important;
+}
+/* Text colors */
+.text-red {
+  color: #f56954 !important;
+}
+.text-yellow {
+  color: #f39c12 !important;
+}
+.text-aqua {
+  color: #00c0ef !important;
+}
+.text-blue {
+  color: #0073b7 !important;
+}
+.text-black {
+  color: #222222 !important;
+}
+.text-light-blue {
+  color: #3c8dbc !important;
+}
+.text-green {
+  color: #00a65a !important;
+}
+.text-navy {
+  color: #001f3f !important;
+}
+.text-teal {
+  color: #39cccc !important;
+}
+.text-olive {
+  color: #3d9970 !important;
+}
+.text-lime {
+  color: #01ff70 !important;
+}
+.text-orange {
+  color: #ff851b !important;
+}
+.text-fuchsia {
+  color: #f012be !important;
+}
+.text-purple {
+  color: #932ab6 !important;
+}
+.text-maroon {
+  color: #85144b !important;
+}
+/*Hide elements by display none only*/
+.hide {
+  display: none !important;
+}
+/* Remove borders */
+.no-border {
+  border: 0px !important;
+}
+/* Remove padding */
+.no-padding {
+  padding: 0px !important;
+}
+/* Remove margins */
+.no-margin {
+  margin: 0px !important;
+}
+/* Remove box shadow */
+.no-shadow {
+  box-shadow: none!important;
+}
+
 header{
 	background:url(img/header.png);
 	top:0;
@@ -116,20 +251,13 @@ ul, li{
 box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px 0px;
 
 }
-#sw-side section ul li a .icon{
-	float:left;
-	margin:0 4px;
+.ic{
+  background:url(img/icons.png) no-repeat;
+  width:20px;
+  height:14px;
+  display:inline-block;
 }
-.nav-icon{
-	width:20px;
-	height:20px;
-	margin:0 4px;
-	background:url(img/icons.png) no-repeat;
-	white-space: nowrap;
-	display:block;
-	float:left;
-}
-.icon-gdrive{
+.ic-gdrive{
 	background-position: -320px 0px;
 }
 .icons{
@@ -435,4 +563,173 @@ box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px 0px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-footer .btn-default {
   color: #666666;
+}
+
+.small-box {
+  position: relative;
+  display: block;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.small-box {
+position: relative;
+display: block;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+margin-bottom: 15px;
+background:#ddd;
+}
+
+.small-box > .small-box-footer {
+position: relative;
+text-align: center;
+padding: 3px 0;
+color: #fff;
+color: rgba(255, 255, 255, 0.8);
+display: block;
+z-index: 10;
+background: rgba(0, 0, 0, 0.1);
+text-decoration: none;
+}
+.small-box > .inner {
+padding: 10px;
+}
+.small-box .icon {
+position: absolute;
+top: auto;
+bottom: 5px;
+right: 5px;
+z-index: 0;
+font-size: 90px;
+color: rgba(0, 0, 0, 0.15);
+}
+.small-box h3 {
+font-size: 38px;
+font-weight: bold;
+margin: 0 0 10px 0;
+white-space: nowrap;
+padding: 0;
+}
+.small-box p {
+font-size: 15px;
+}
+.bg-aqua{
+  background-color:#00c0ef;
+}
+.bg-green {
+  background-color: #00a65a !important;
+}
+.bg-yellow {
+background-color: #f39c12 !important;
+}
+.bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black {
+color: #f9f9f9 !important;
+}
+.bg-red {
+background-color: #f56954 !important;
+}
+
+
+/*
+    Component: Sidebar
+--------------------------
+*/
+#sw-side {
+  margin-bottom: 5px;
+}
+#sw-side .sidebar-form input:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent!important;
+}
+#sw-side .sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#sw-side .sidebar-menu > li {
+  margin: 0;
+  padding: 0;
+}
+#sw-side .sidebar-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  color:#aaa;
+  text-decoration: none;
+  display: block;
+}
+#sw-side .sidebar-menu > li > a:hover{
+  background:#ddd;
+  color:#999;
+}
+#sw-side .sidebar-menu > li > a > .fa,
+#sw-side .sidebar-menu > li > a > .glyphicon,
+#sw-side .sidebar-menu > li > a > .ic {
+  width: 20px;
+}
+.navbar-right .label {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  padding: 1px 2px;
+  font-weight: normal;
+}
+#sw-side .sidebar-menu .treeview-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#sw-side .sidebar-menu .treeview-menu > li {
+  margin: 0;
+}
+#sw-side .sidebar-menu .treeview-menu > li > a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+  margin: 0px 0px;
+}
+#sw-side .sidebar-menu .treeview-menu > li > a > .fa,
+#sw-side .sidebar-menu .treeview-menu > li > a > .glyphicon,
+#sw-side .sidebar-menu .treeview-menu > li > a > .ion {
+  width: 20px;
+}
+.user-panel {
+  padding: 10px;
+}
+.user-panel:before,
+.user-panel:after {
+  display: table;
+  content: " ";
+}
+.user-panel:after {
+  clear: both;
+}
+.user-panel > .image > img {
+  width: 45px;
+  height: 45px;
+}
+.user-panel > .info {
+  font-weight: 600;
+  padding: 5px 5px 5px 15px;
+  font-size: 14px;
+  line-height: 1;
+}
+.user-panel > .info > p {
+  margin-bottom: 9px;
+}
+.user-panel > .info > a {
+  text-decoration: none;
+  padding-right: 5px;
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: normal;
+}
+.user-panel > .info > a > .fa,
+.user-panel > .info > a > .ion,
+.user-panel > .info > a > .glyphicon {
+  margin-right: 3px;
 }
