@@ -1,6 +1,14 @@
-App.create('hello',{
+App.create('barList',{
+	construct: function(){
+		this.type = 'messages';
+		this.icon = 'fa fa-envelope';
+		this.label = 'label-success';
+		this.main = 
+		this.header = $('<li/>', {'class': 'header'});
+	},
 	run: function(){
-alert(this.name);
+		if(!this.container)
+			return;
 	}
 });
 $(function(){
@@ -19,15 +27,7 @@ $(function(){
 			this.post = $('this').data('req');
 		Main.load(this.href, this.post);
 		return false;
-	});
-
-	var c = 'com -a -b 300 --testando=/testando/path$Steste';
-	window.W=App.exec(c);
-	//$(document.body).css({background:'none'}).html(c);
-	console.log(c);
-	console.log(W);
-	//$(document.body).css({background:'none'}).html('--- --teste'.match(/^-+/).length);
-	
+	});	
 });
 Main=new function(){
 	this.load = function redirect(url, req, call){

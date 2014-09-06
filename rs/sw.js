@@ -17,14 +17,15 @@ jQuery.fn.extend({
 		return $(this).each(function(){
 			//this.ex = new EX(this, $(this).data('ex'));
 			var $this = $(this);
-			this.app = $this.data('app');
-			for(var i in this.app){
-				var a = App.exec(i);
-				if(!a) continue;
-				a.args = this.app[i];
+			var appData = $this.data('app');
+			for(var i in appData){
+				if(!App.exists(i))
+					continue;
+				var a = new App[i];
 				a.node = this;
 				a.obj = $(this);
-				a.run && a.run();
+				a.dt = appData[i];
+				a.run();
 			}
 		});
 	},
@@ -36,31 +37,35 @@ jQuery.fn.extend({
 
 //Applications Shell
 App = new function(){
-	this.exec = function(c, a){
-		if(this.apps[c])
-			return new this.apps[c](a);
-		else
-			console.log('App not installed.');
+	this.exists = function(app){
+		return !!this[app];
 	};
 	this.cli = function(c){
-		var p = this.parse(c);
-		this.exec(p['$0'], p);
+		var p = this.parse(c), app = p['$0'];
+		if(this.exists(app))
+			return (new this[app]).run(p);
+		else
+			this.error('App "'+c+'" not created.');
 	};
-	this.create = function(o, p){
-		if(typeof o == 'string' && typeof p === 'object'){
-			p.name = o;
-			o = p;
-		}
-		if(o.name && !this.apps[o.name]){
-			var a = o.construct || function(){};
-			a.prototype = o;
-			this.apps[o.name] = a;
+	this.create = function(name, proto){
+		if(typeof name == 'string' && typeof proto === 'object'){
+			proto.name = name;
+		}else proto = name;
+		if(proto.name && !this[proto.name]){
+			var a = proto.construct || function(){};
+			if(typeof proto.run != 'function')
+				proto.run = function(){};
+			a.prototype = proto;
+			this[proto.name] = a;
 			return true;
 		}else{
-			console.log('App name not created.');
+			this.error('App name not implemented.');
 			return false;
 		}
 
+	};
+	this.error = function(m){
+		console.log(m);
 	};
 	this.parse = function(c){
 		var strs = c.match(/"(^".+)"/g), S='$S',
@@ -102,5 +107,4 @@ App = new function(){
 		}
 		return res;
 	};
-	this.apps = {};
 }();
